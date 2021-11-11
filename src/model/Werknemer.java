@@ -7,6 +7,7 @@ package model;
 public class Werknemer extends Persoon {
     private static final double GRENSWAARDE_BONUS = 4500;
     private static final double DEFAULT_MAAND_SALARIS = 0;
+    public static final int MAANDEN_PER_JAAR = 12;
 
     private double maandSalaris;
 
@@ -16,12 +17,31 @@ public class Werknemer extends Persoon {
     }
 
     public Werknemer(String naam) {
-        super(naam);
-        this.maandSalaris = DEFAULT_MAAND_SALARIS;
+        this(naam, DEFAULT_WOONPLAATS, new Afdeling(), DEFAULT_MAAND_SALARIS);
     }
 
     public Werknemer() {
-        super();
-        this.maandSalaris = DEFAULT_MAAND_SALARIS;
+        this(DEFAULT_NAAM);
+    }
+
+    public boolean heeftRechtOpBonus() {
+        return maandSalaris >= GRENSWAARDE_BONUS;
+    }
+
+    @Override
+    public double berekenJaarInkomen() {
+        double jaarInkomen = maandSalaris * MAANDEN_PER_JAAR;
+
+        if (heeftRechtOpBonus()) {
+            jaarInkomen += maandSalaris;
+        }
+
+        return jaarInkomen;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s en is een werknemer %s recht op een bonus",
+                super.toString(), heeftRechtOpBonus() ? "met" : "zonder");
     }
 }
