@@ -3,6 +3,7 @@ package controller;
 import model.Afdeling;
 import model.Persoon;
 import model.Werknemer;
+import model.ZZPer;
 
 /**
  * @author Vincent Velthuizen <v.r.velthuizen@pl.hanze.nl>
@@ -19,11 +20,12 @@ public class BedrijfLauncher {
 
         Werknemer baas = new Werknemer("Mark", "Den Haag", afdelingen[2], 10000);
         Werknemer medewerker = new Werknemer("Caroline", "Delft", afdelingen[1], 4000);
-        Persoon assistent = new Persoon("Klaas");
+        ZZPer assistent = new ZZPer("Klaas", "Diemen", afdelingen[3], 50);
 
         System.out.printf("Het aantal personen in het bedrijf is %d\n", Persoon.aantalPersonen);
         System.out.println(baas);
         System.out.println(medewerker.toString());
+        System.out.println(assistent);
 
     }
 }
