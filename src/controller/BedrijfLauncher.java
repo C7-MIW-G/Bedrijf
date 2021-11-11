@@ -22,10 +22,14 @@ public class BedrijfLauncher {
         Werknemer medewerker = new Werknemer("Caroline", "Delft", afdelingen[1], 4000);
         ZZPer assistent = new ZZPer("Klaas", "Diemen", afdelingen[3], 50);
 
+        assistent.huurIn(160);
+
         System.out.printf("Het aantal personen in het bedrijf is %d\n", Persoon.aantalPersonen);
         System.out.println(baas);
         System.out.println(medewerker.toString());
         System.out.println(assistent);
-
+        System.out.printf("%s verdient %.2f per jaar\n", baas.getNaam(), baas.berekenJaarInkomen());
+        System.out.printf("%s verdient %.2f per jaar\n", medewerker.getNaam(), medewerker.berekenJaarInkomen());
+        System.out.printf("%s verdient %.2f per jaar\n", assistent.getNaam(), assistent.berekenJaarInkomen());
     }
 }
