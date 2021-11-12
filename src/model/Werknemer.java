@@ -7,7 +7,7 @@ package model;
 public class Werknemer extends Persoon {
     private static final double GRENSWAARDE_BONUS = 4500;
     private static final double DEFAULT_MAAND_SALARIS = 0;
-    public static final int MAANDEN_PER_JAAR = 12;
+    private static final int MAANDEN_PER_JAAR = 12;
 
     private double maandSalaris;
 
