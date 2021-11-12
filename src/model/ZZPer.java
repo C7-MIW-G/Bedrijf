@@ -5,7 +5,7 @@ package model;
  * Dit beschrijft een externe persoon die door ons wordt ingehuurd
  */
 public class ZZPer extends Persoon implements Oproepbaar {
-    public static final int DEFAULT_UREN_GEWERKT = 0;
+    private static final int DEFAULT_UREN_GEWERKT = 0;
     private double uurtarief;
     private int urenGewerkt;
 
